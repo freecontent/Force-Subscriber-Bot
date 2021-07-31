@@ -25,7 +25,7 @@ def _onUnMuteRequest(client, cb):
             if cb.message.reply_to_message.from_user.id == user_id:
               cb.message.delete()
           except UserNotParticipant:
-            client.answer_callback_query(cb.id, text="❗ Join the mentioned 'channel' and press the 'UnMute Me' button again.", show_alert=True)
+            client.answer_callback_query(cb.id, text="❗ Join the mentioned 'Channel' and press the 'UnMute Me' button again.\n\nदिए गए 'Channel' से जुड़े और 'Unmute Me' बटन को फिर से दबाएं।", show_alert=True)
       else:
         client.answer_callback_query(cb.id, text="❗ You are muted by admins for other reasons.", show_alert=True)
     else:
@@ -56,7 +56,7 @@ def _check_member(client, message):
           ]]
           reply_markup = InlineKeyboardMarkup(buttons)
           sent_message = message.reply_text(
-              "{}, you are **not subscribed** to my channel yet. Please join and **press the button below** to unmute yourself.".format(message.from_user.mention),
+              "{}, you are **not subscribed** to my channel yet. Please join and **press the button below** to unmute yourself.\n\nआपने अभी तक **मेरे चैनल को सब्सक्राइब नहीं** किया है। कृपया **जॉइन** करिए और खुद को **अनम्यूट** करने के लिए **नीचे दिया गया बटन** दबाएं।".format(message.from_user.mention),
               disable_web_page_preview=True,
               reply_markup=reply_markup
           )
