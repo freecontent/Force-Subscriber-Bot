@@ -56,7 +56,7 @@ def _check_member(client, message):
           ]]
           reply_markup = InlineKeyboardMarkup(buttons)
           sent_message = message.reply_text(
-              "{}, you are **not subscribed** to my channel yet. Please join and **press the button below** to unmute yourself.\n\nआपने अभी तक **मेरे चैनल को सब्सक्राइब नहीं** किया है। कृपया **जॉइन** करिए और खुद को **अनम्यूट** करने के लिए **नीचे दिया गया बटन** दबाएं।".format(message.from_user.mention),
+              "{}, you have **not subscribed** to my channel yet. Please join and **press the button below** to unmute yourself.\n\nआपने अभी तक **मेरे चैनल को सब्सक्राइब नहीं** किया है। कृपया **जॉइन** करिए और खुद को **अनम्यूट** करने के लिए **नीचे दिया गया बटन** दबाएं।".format(message.from_user.mention),
               disable_web_page_preview=True,
               reply_markup=reply_markup
           )
